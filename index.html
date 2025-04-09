@@ -1,1 +1,1101 @@
-Main file
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qahwahbee AI Research - Brewing Innovation. Buzzing with Intelligence</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --honey-orange: #FFBF00;
+            --coffee-brown: #9B4A0F;
+            --dark-brown: #3A2A1D;
+            --cream: #FFFDD0;
+            --honey-light: #FFD966;
+            --honey-lighter: #FFE599;
+            --honey-lightest: #FFF0CC;
+            --coffee-light: #BC7D4F;
+            --coffee-lighter: #D4A77C;
+            --coffee-lightest: #E9D2B9;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            background-color: var(--honey-lightest);
+            color: var(--dark-brown);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--coffee-lightest);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--coffee-brown);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-brown);
+        }
+        
+        /* Bee Stripe Separators */
+        .bee-separator {
+            height: 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                black,
+                black 15px,
+                var(--honey-orange) 15px,
+                var(--honey-orange) 30px
+            );
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        /* Hero Section Animation */
+        .hero-animation {
+            background: 
+                radial-gradient(circle at 10% 20%, var(--honey-lighter) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, var(--coffee-lighter) 0%, transparent 50%),
+                repeating-linear-gradient(0deg, var(--honey-lightest) 0px, var(--honey-lightest) 2px, transparent 2px, transparent 4px),
+                var(--coffee-lightest);
+            background-size: 300% 300%, 200% 200%, 10px 10px, 100% 100%;
+            animation: heroBackground 15s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes heroBackground {
+            0%, 100% {
+                background-position: 0% 0%, 100% 100%, 0 0, 0 0;
+            }
+            50% {
+                background-position: 100% 100%, 0% 0%, 0 0, 0 0;
+            }
+        }
+        
+        .hero-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M29.9,0.5l8.7,5v10l-8.7,5-8.7-5v-10L29.9,0.5z M48.6,10.5l8.7,5v10l-8.7,5-8.7-5v-10L48.6,10.5z M11.4,10.5l8.7,5v10l-8.7,5-8.7-5v-10L11.4,10.5z M29.9,20.5l8.7,5v10l-8.7,5-8.7-5v-10L29.9,20.5z M48.6,30.5l8.7,5v10l-8.7,5-8.7-5v-10L48.6,30.5z M11.4,30.5l8.7,5v10l-8.7,5-8.7-5v-10L11.4,30.5z M29.9,40.5l8.7,5v10l-8.7,5-8.7-5v-10L29.9,40.5z' fill='rgba(155, 74, 15, 0.1)'/%3E%3C/svg%3E");
+            z-index: 1;
+            opacity: 0.3;
+            animation: honeycombFloat 60s linear infinite;
+        }
+        
+        @keyframes honeycombFloat {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100px 100px;
+            }
+        }
+        
+        /* Circuit Board Pattern */
+        .circuit-pattern {
+            background-color: var(--honey-lighter);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M10,10 L30,10 M30,10 L30,30 M30,30 L10,30 M10,30 L10,10 M50,10 L70,10 M70,10 L70,30 M70,30 L50,30 M50,30 L50,10 M10,50 L30,50 M30,50 L30,70 M30,70 L10,70 M10,70 L10,50 M50,50 L70,50 M70,50 L70,70 M70,70 L50,70 M50,70 L50,50 M30,30 L50,50 M70,30 L50,50 M30,70 L50,50 M70,70 L50,50' stroke='rgba(58, 42, 29, 0.1)' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+            position: relative;
+        }
+        
+        /* Service Card Styling */
+        .service-card {
+            background: linear-gradient(135deg, var(--honey-lighter) 0%, var(--coffee-lightest) 100%);
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--honey-orange) 0%, var(--coffee-brown) 100%);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .service-card:hover::before {
+            opacity: 0.1;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            color: var(--coffee-brown);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--dark-brown);
+            transition: all 0.3s ease;
+        }
+        
+        /* Research Area Styling */
+        .research-area {
+            background: linear-gradient(135deg, var(--coffee-lightest) 0%, var(--honey-lighter) 100%);
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .research-area::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='2' fill='rgba(155, 74, 15, 0.1)'/%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 1;
+        }
+        
+        .research-area:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .research-icon {
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+        
+        .research-area:hover .research-icon {
+            transform: scale(1.1);
+        }
+        
+        /* Button Styling */
+        .custom-btn {
+            background: var(--coffee-brown);
+            color: var(--cream);
+            border: none;
+            border-radius: 30px;
+            padding: 12px 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .custom-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.7s ease;
+            z-index: -1;
+        }
+        
+        .custom-btn:hover {
+            background: var(--dark-brown);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .custom-btn:hover::before {
+            left: 100%;
+        }
+        
+        /* Form Input Styling */
+        .form-input {
+            background-color: var(--honey-lightest);
+            border: 2px solid var(--coffee-lighter);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--dark-brown);
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: var(--coffee-brown);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(155, 74, 15, 0.2);
+        }
+        
+        /* Navigation Styling */
+        .nav-link {
+            position: relative;
+            color: var(--cream);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--honey-orange);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--honey-orange);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Mobile Menu Animation */
+        .mobile-menu {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            transform: translateY(-20px);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        /* Logo Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .logo-animation {
+            animation: pulse 3s infinite ease-in-out;
+        }
+        
+        /* Contact Section Background */
+        .contact-bg {
+            background: 
+                linear-gradient(135deg, var(--honey-lightest) 0%, var(--coffee-lightest) 100%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M29.9,0.5l8.7,5v10l-8.7,5-8.7-5v-10L29.9,0.5z M48.6,10.5l8.7,5v10l-8.7,5-8.7-5v-10L48.6,10.5z M11.4,10.5l8.7,5v10l-8.7,5-8.7-5v-10L11.4,10.5z M29.9,20.5l8.7,5v10l-8.7,5-8.7-5v-10L29.9,20.5z M48.6,30.5l8.7,5v10l-8.7,5-8.7-5v-10L48.6,30.5z M11.4,30.5l8.7,5v10l-8.7,5-8.7-5v-10L11.4,30.5z M29.9,40.5l8.7,5v10l-8.7,5-8.7-5v-10L29.9,40.5z' fill='rgba(155, 74, 15, 0.05)'/%3E%3C/svg%3E");
+        }
+        
+        /* Section transitions */
+        .section-transition {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section-transition::before {
+            content: "";
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(to bottom, transparent, var(--coffee-lightest));
+            z-index: -1;
+        }
+        
+        /* Dynamic Text Animation */
+        @keyframes changeColor {
+            0%, 100% {
+                color: var(--honey-orange);
+            }
+            50% {
+                color: var(--coffee-brown);
+            }
+        }
+        
+        .animated-text {
+            animation: changeColor 5s infinite alternate;
+        }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .floating {
+            animation: float 5s ease infinite;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-top: 60px;
+                padding-bottom: 60px;
+            }
+            
+            .bee-separator {
+                height: 10px;
+                margin: 30px 0;
+            }
+            
+            .section-heading {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-black sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="logo-animation">
+                        <svg width="40" height="40" viewBox="0 0 60 60">
+                            <defs
+     id="defs1" />
+  <g
+     id="layer1">
+    <path
+       d="m 36.422775,12.715893 c 1.13898,0.887161 2.16067,1.885509 3.175,2.910417 0.16064,0.154843 0.32128,0.309686 0.48679,0.469222 2.95119,3.084268 3.87649,7.368907 3.83904,11.480048 -0.13611,5.160499 -2.23312,9.375792 -5.92987,12.954636 -1.01439,0.863727 -2.09326,1.529106 -3.25768,2.166276 -0.23332,0.129241 -0.23332,0.129241 -0.47135,0.261096 -2.433,1.266042 -4.8956,1.651741 -7.61498,1.62406 -0.27944,-0.0021 -0.55887,-0.0044 -0.84678,-0.0066 -2.00939,-0.04365 -3.70225,-0.26406 -5.51975,-1.167448 -0.28036,-0.128582 -0.56071,-0.257161 -0.84956,-0.389641 -4.56474,-2.250445 -7.2849,-5.825335 -8.9731,-10.526488 -1.1396397,-3.571548 -0.9707997,-8.150296 0.56224,-11.573454 0.11528,-0.269782 0.23056,-0.539564 0.34933,-0.817521 2.11126,-4.574391 5.64739,-7.503414 10.29705,-9.303825 4.90379,-1.6232847 10.41033,-0.9064907 14.75362,1.919263 z"
+       fill="#c56b07"
+       id="path2"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 27.046605,4.1830813 c 0.32077,-0.0055 0.64154,-0.01091 0.97203,-0.01654 2.12603,-0.0091 3.99364,0.243175 6.02289,0.876432 0.18603,0.05798 0.37206,0.115962 0.56373,0.1757 3.47734,1.165031 6.34535,2.988551 8.69669,5.8404697 0.51822,0.622723 0.51822,0.622723 1.19993,1.122412 1.13683,0.931446 1.77295,2.186492 2.504235,3.444751 0.140178,0.237381 0.280355,0.474762 0.42478,0.719336 2.856782,5.228865 3.418452,11.608601 1.760099,17.318839 -0.902574,2.83002 -2.153164,6.007192 -4.301544,8.155575 -0.0889,0.782404 -0.0917,1.187225 0.35502,1.848207 0.16388,0.166354 0.32776,0.332708 0.49661,0.504103 0.18042,0.186563 0.36084,0.373126 0.54673,0.56534 0.19339,0.194067 0.38677,0.388133 0.586013,0.588079 0.388647,0.403728 0.777254,0.807492 1.165821,1.211294 0.60618,0.621088 1.216738,1.235207 1.835546,1.843815 0.90153,0.921128 1.485523,1.56301 1.579232,2.881479 -0.116571,1.25589 -0.640187,1.87356 -1.53789,2.728516 -0.950007,0.475004 -1.877694,0.446476 -2.910417,0.264583 -0.508175,-0.336089 -0.508175,-0.336089 -0.995285,-0.788582 -0.18196,-0.168103 -0.36392,-0.336204 -0.55139,-0.5094 -1.17559,-1.142818 -2.32007,-2.315062 -3.45612,-3.497075 -0.18912,-0.19287 -0.37824,-0.385744 -0.57309,-0.584459 -0.16804,-0.173879 -0.33608,-0.347758 -0.50921,-0.526907 -0.60914,-0.510302 -1.08285,-0.77093 -1.8524,-0.972743 -0.61874,0.127878 -0.61874,0.127878 -1.2144,0.441317 -0.22721,0.10524 -0.45443,0.210478 -0.68853,0.318907 -0.2397,0.114747 -0.4794,0.229495 -0.72637,0.347718 -5.11043,2.289233 -11.11317,3.14442 -16.5685,1.375627 -6.50559,-2.621436 -11.4976297,-6.874028 -14.3877497,-13.348022 -2.1441,-5.13311 -2.63266,-11.68172 -0.5457,-16.916797 0.071,-0.179059 0.14205,-0.358118 0.21523,-0.542602 2.59214,-6.372714 7.2191997,-10.8024857 13.5430997,-13.4803147 2.84869,-1.032912 5.33494,-1.376515 8.35091,-1.389062 z M 14.071685,15.844385 c -2.74317,3.509239 -4.2681697,7.152153 -4.2395297,11.622029 0.002,0.2772 0.003,0.5544 0.005,0.840001 0.10532,4.602962 2.0892997,8.485551 5.2426397,11.801087 4.02487,3.730228 8.7009,4.609015 13.98765,4.408905 1.51032,-0.102936 2.80027,-0.476914 4.18075,-1.108847 0.28308,-0.125513 0.56617,-0.251024 0.85783,-0.380339 4.34042,-2.124252 7.27033,-5.578697 8.93176,-10.070703 1.57575,-4.683502 1.09961,-9.514419 -0.91778,-13.951603 -2.0454,-3.875226 -5.62148,-6.842994 -9.77408,-8.200016 -0.22612,-0.06787 -0.45225,-0.135744 -0.68523,-0.205672 -0.26961,-0.08953 -0.26961,-0.08953 -0.54467,-0.180868 -6.09194,-1.7218947 -12.95988,0.768672 -17.04392,5.426026 z"
+       fill="#f1ad16"
+       id="path3"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 43.831105,7.4242263 c 5.248681,4.6336737 8.535256,10.9477067 9.033299,17.9924417 0.298954,5.438959 -0.813012,11.578174 -4.279067,15.937269 -0.305599,0.455076 -0.305599,0.455076 -0.216008,0.994254 0.263172,0.622152 0.580669,1.021969 1.034562,1.522389 0.166099,0.184174 0.332197,0.36835 0.503329,0.558104 0.529785,0.557241 1.076359,1.091149 1.629874,1.624708 1.430488,1.408266 2.625025,2.992088 2.695443,5.060156 -0.02953,1.653622 -0.518914,2.976192 -1.626774,4.213696 -1.482912,1.372121 -2.891913,2.00999 -4.929673,1.931924 -2.400655,-0.334221 -4.072285,-2.015646 -5.647455,-3.71476 -0.38016,-0.405212 -0.76217,-0.808707 -1.14619,-1.210263 -0.16467,-0.177247 -0.32934,-0.354494 -0.499,-0.537112 -0.59853,-0.519144 -1.08084,-0.770117 -1.84401,-0.981141 -0.75068,0.246319 -1.40838,0.507214 -2.11666,0.843359 -3.13244,1.465173 -6.17656,1.94681 -9.62422,1.91823 -0.33695,-0.0019 -0.6739,-0.0036 -1.02106,-0.0055 -2.43468,-0.0416 -4.53351,-0.277762 -6.81722,-1.168612 -0.27661,-0.101978 -0.55321,-0.203957 -0.83819,-0.309025 -2.80712,-1.099363 -5.32563,-2.507689 -7.62848,-4.453475 -0.31821,-0.260403 -0.31821,-0.260403 -0.6428597,-0.526066 -4.77997,-4.072659 -7.81736,-9.928105 -8.61756,-16.142684 -0.25761998,-3.909291 -0.40487998,-7.953321 1.05834,-11.641666 0.0639,-0.168315 0.12772,-0.336631 0.19353,-0.510046 2.56541,-6.692677 7.23563,-12.1656157 13.8107797,-15.1747847 9.14991,-3.96335404 19.86803,-2.76346904 27.53527,3.778581 z m -28.83958,0 c -0.22545,0.127899 -0.45089,0.255798 -0.68317,0.387573 C 9.1088053,11.043958 5.4617853,16.458772 4.0443853,22.381452 c -1.15994,6.972856 0.33515,13.084228 4.16719,18.876367 3.2498397,4.504063 8.4992097,8.289023 14.0900897,9.219076 5.42175,0.643107 10.33532,0.01937 15.18667,-2.447912 0.18725,-0.09192 0.37449,-0.183835 0.56741,-0.278537 0.16397,-0.08471 0.32794,-0.169424 0.49687,-0.256702 0.77703,-0.176845 1.1437,0.03414 1.83891,0.411731 0.50901,0.446575 0.97434,0.887646 1.44177,1.373561 0.13194,0.133694 0.26389,0.267391 0.39983,0.405138 0.41884,0.425 0.83488,0.852609 1.25071,1.280546 0.41913,0.428403 0.83881,0.856234 1.25922,1.28338 0.26087,0.265356 0.52091,0.531522 0.78005,0.798571 0.87528,0.894514 1.358361,1.252789 2.607479,1.308023 0.940169,-0.0061 1.454521,-0.126587 2.182813,-0.727604 0.9195,-0.965475 1.097814,-1.616707 1.085205,-2.925919 -0.332509,-1.418563 -1.522072,-2.346176 -2.540414,-3.324862 -0.364135,-0.363469 -0.72796,-0.727247 -1.091406,-1.091406 -0.16985,-0.168828 -0.3397,-0.337654 -0.514697,-0.511596 -0.530791,-0.534017 -1.05587,-1.070459 -1.5689,-1.621608 -0.15279,-0.162004 -0.30559,-0.324011 -0.46302,-0.490926 -0.4334,-0.67855 -0.44905,-1.047856 -0.33073,-1.840714 0.34003,-0.577742 0.34003,-0.577742 0.81029,-1.174089 3.737671,-5.107141 4.95913,-11.30946 4.119903,-17.536526 -0.861743,-4.624929 -3.043866,-9.455456 -6.851523,-12.365524 -0.45992,-0.409277 -0.45992,-0.409277 -1.07487,-1.1751217 -2.46975,-3.012568 -7.25688,-4.796329 -11.02671,-5.319572 -5.96067,-0.35197 -10.66915,0.221548 -15.875,3.175 z"
+       fill="#432d10"
+       id="path4"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 36.422775,12.715893 c 1.13898,0.887161 2.16067,1.885509 3.175,2.910417 0.16064,0.154843 0.32128,0.309686 0.48679,0.469222 2.95119,3.084268 3.87649,7.368907 3.83904,11.480048 -0.13611,5.160499 -2.23312,9.375792 -5.92987,12.954636 -1.01439,0.863727 -2.09326,1.529106 -3.25768,2.166276 -0.23332,0.129241 -0.23332,0.129241 -0.47135,0.261096 -2.433,1.266042 -4.8956,1.651741 -7.61498,1.62406 -0.27944,-0.0021 -0.55887,-0.0044 -0.84678,-0.0066 -2.00939,-0.04365 -3.70225,-0.26406 -5.51975,-1.167448 -0.28036,-0.128582 -0.56071,-0.257161 -0.84956,-0.389641 -4.56474,-2.250445 -7.2849,-5.825335 -8.9731,-10.526488 -1.1396397,-3.571548 -0.9707997,-8.150296 0.56224,-11.573454 0.11528,-0.269782 0.23056,-0.539564 0.34933,-0.817521 2.11126,-4.574391 5.64739,-7.503414 10.29705,-9.303825 4.90379,-1.6232847 10.41033,-0.9064907 14.75362,1.919263 z m -20.87624,4.090706 c -2.92873,3.545013 -4.25729,7.488934 -3.99459,12.048877 0.5618,4.576865 2.67472,8.311524 6.26938,11.145573 3.54349,2.396765 7.48828,3.363079 11.72642,2.764689 4.28505,-0.933775 7.61929,-3.215351 10.10687,-6.805786 2.32112,-3.707688 3.23596,-7.978688 2.40606,-12.287622 -1.34163,-4.720945 -4.18735,-7.959407 -8.31681,-10.509953 -6.00223,-3.2915457 -13.74778,-1.055675 -18.19733,3.644222 z"
+       fill="#442d10"
+       id="path5"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 20.531235,23.977221 c 3.21714,1.793682 3.21714,1.793682 3.65559,3.084049 0.0215,0.155526 0.043,0.311051 0.0651,0.471289 -1.70165,1.579204 -2.85025,2.513648 -5.23689,2.446363 -1.28011,-0.142738 -2.00373,-0.698605 -2.91558,-1.56993 -0.73647,-1.115226 -0.86452,-1.660044 -0.84336,-2.993099 1.18625,-2.021013 3.20283,-2.402435 5.27513,-1.438672 z"
+       fill="#f4b016"
+       id="path17"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 36.869255,23.745711 c 0.80474,0.456747 1.19307,0.87499 1.67018,1.670182 0.15974,1.098228 0.076,1.690577 -0.39687,2.695443 -0.96116,1.081307 -1.9359,1.658429 -3.37034,1.90376 -1.84198,0.09544 -3.15857,-0.57649 -4.5837,-1.688786 -0.38034,-0.529167 -0.38034,-0.529167 -0.33073,-1.025261 0.55808,-1.459581 2.06685,-2.607738 3.40651,-3.340364 1.23207,-0.545975 2.3024,-0.548185 3.60495,-0.214974 z"
+       fill="#f4b116"
+       id="path18"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 28.981365,20.984122 c 1.01553,0.836318 1.32158,1.211651 1.47174,2.563151 -0.0335,0.817587 -0.13019,1.099472 -0.56223,1.835547 -1.09202,1.003478 -2.0959,1.199433 -3.54191,1.158585 -0.99941,-0.131768 -1.59604,-0.640826 -2.312,-1.307413 -0.46518,-0.90588 -0.51942,-1.747572 -0.31419,-2.728516 1.11418,-1.98504 3.23979,-2.399094 5.25859,-1.521354 z"
+       fill="#f4b116"
+       id="path19"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 47.799857,17.742976 c 2.408518,2.683979 2.34345,7.543033 2.227254,10.914062 -0.267437,4.536694 -1.848365,9.873715 -5.137666,13.163021 -0.0889,0.782404 -0.0917,1.187226 0.35501,1.848208 0.16388,0.166354 0.32777,0.332708 0.49661,0.504103 0.18043,0.186562 0.36085,0.373125 0.54674,0.565339 0.19338,0.194067 0.386767,0.388134 0.58601,0.588079 0.388647,0.403728 0.777254,0.807493 1.165821,1.211297 0.60618,0.621086 1.216738,1.235205 1.835546,1.843815 0.90153,0.921126 1.485523,1.563008 1.579232,2.881477 -0.116571,1.255889 -0.640187,1.873559 -1.53789,2.728515 -0.950032,0.475017 -1.877653,0.446373 -2.910417,0.264584 -0.505262,-0.334929 -0.505262,-0.334929 -0.990122,-0.786517 -0.18174,-0.168015 -0.36349,-0.336034 -0.55074,-0.50914 -0.9967,-0.96316 -1.98248,-1.935583 -2.95705,-2.92114 -0.30747,-0.309261 -0.30747,-0.309261 -0.62116,-0.624769 -0.49912,-0.502203 -0.99761,-1.00502 -1.49551,-1.508434 0.79375,0 0.79375,0 1.36122,0.48156 0.21417,0.220006 0.42833,0.440015 0.64899,0.666689 0.2338,0.237553 0.4676,0.475104 0.70849,0.719854 0.24591,0.253625 0.49172,0.507358 0.73742,0.761193 0.48172,0.493927 0.96472,0.98655 1.44797,1.478979 0.21387,0.220308 0.42774,0.440613 0.64809,0.667597 0.861452,0.833276 1.467376,0.837866 2.657137,0.822753 0.635777,-0.05162 1.061976,-0.198374 1.580265,-0.571542 0.482432,-0.964864 0.510812,-1.865135 0.264583,-2.910417 -0.683181,-0.996749 -1.511588,-1.810959 -2.38125,-2.645833 -0.320032,-0.319379 -0.639773,-0.639046 -0.959114,-0.959115 -0.145976,-0.143248 -0.291951,-0.286493 -0.44235,-0.43408 -0.677371,-0.689806 -1.306221,-1.419392 -1.936831,-2.151808 -0.20334,-0.235503 -0.41045,-0.468322 -0.63045,-0.68833 -0.19062,-1.283182 0.38379,-2.038921 1.0914,-3.042709 3.610025,-5.373834 4.844515,-11.658262 3.677038,-18.050577 -0.209524,-1.002831 -0.440437,-1.957059 -0.826564,-2.907316 -0.237712,-0.605648 -0.237712,-0.605648 -0.237712,-1.399398 z"
+       fill="#c36d08"
+       id="path21"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 36.158195,12.186726 c 0.13097,0.261937 0.13097,0.261937 0.26458,0.529167 -0.70732,-0.282931 -1.41448,-0.566175 -2.1208,-0.851628 -4.92371,-1.9504547 -9.36268,-2.1661877 -14.34021,-0.121956 -1.65386,0.763322 -2.94303,1.674566 -4.2447,2.947623 -0.46095,0.407211 -0.46095,0.407211 -0.99012,0.407211 -0.0723,0.155525 -0.14461,0.31105 -0.21911,0.471289 -0.30095,0.569797 -0.63137,1.015056 -1.03766,1.513086 -2.34937,3.096116 -3.39813,6.529962 -3.37344,10.384895 0.002,0.277201 0.003,0.554401 0.005,0.840001 0.0773,3.378159 1.10338,6.018568 2.89239,8.886537 0.34997,0.561539 0.6557,1.119781 0.93948,1.716691 -2.03363,-1.854188 -3.15982,-4.00395 -3.9687497,-6.614583 -0.0948,-0.271487 -0.18963,-0.542975 -0.28732,-0.822689 -0.80303,-3.418034 -0.65231,-7.61036 0.8164897,-10.818977 0.18826,-0.424626 0.18826,-0.424626 0.38034,-0.857829 2.02177,-4.131027 5.62447,-7.533491 9.93841,-9.196338 5.26042,-1.6978067 10.58447,-1.4260187 15.34583,1.5875 z"
+       fill="#c06b08"
+       id="path22"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 23.458195,29.649226 c 0.5296,0.08554 1.05869,0.174283 1.5875,0.264583 1.78072,0.07429 3.53705,0.06186 5.29167,-0.264583 0.41341,0.463021 0.41341,0.463021 0.79375,1.058333 -0.0362,0.537435 -0.0362,0.537435 -0.26459,1.058334 -1.63103,0.899419 -3.74087,1.043693 -5.55625,0.79375 -0.83847,-0.280707 -1.60809,-0.630713 -2.38125,-1.058334 0.23151,-1.554427 0.23151,-1.554427 0.52917,-1.852083 z"
+       fill="#f3af16"
+       id="path24"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 9.1706953,42.084643 c 0.26194,0.223738 0.52387,0.447477 0.79375,0.677995 0.1712097,0.145634 0.3424297,0.291269 0.5188297,0.441316 0.34306,0.297708 0.68135,0.601057 1.01286,0.911573 2.13095,1.972259 4.54589,3.393696 7.24917,4.418335 0.16627,0.06312 0.33254,0.126236 0.50384,0.191267 5.06925,1.813159 11.21331,1.678103 16.13855,-0.539179 0.81493,-0.397421 1.60287,-0.817854 2.38901,-1.270594 0.76274,-0.332796 0.76274,-0.332796 1.49241,-0.301791 0.59325,0.233578 0.59325,0.233578 1.12241,1.027328 -0.19323,-0.05329 -0.38647,-0.106583 -0.58555,-0.161489 -0.84914,-0.118723 -1.18653,5.29e-4 -1.95176,0.364061 -0.22721,0.104387 -0.45443,0.208774 -0.68852,0.316324 -0.23971,0.11253 -0.47941,0.22506 -0.72638,0.341 -5.11622,2.267442 -11.11638,3.126841 -16.5685,1.35909 -4.07145,-1.640595 -7.83886,-3.828449 -10.7001197,-7.246069 0,-0.174625 0,-0.34925 0,-0.529167 z"
+       fill="#c06a08"
+       id="path25"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 22.664445,33.617976 c 0.40109,0.06548 0.40109,0.06548 0.81029,0.132292 2.53451,0.315687 5.13197,0.222011 7.65638,-0.132292 0,0.727604 0,0.727604 -0.26459,1.5875 -1.14483,0.963759 -2.44639,1.199184 -3.9057,1.128613 -1.25786,-0.149274 -2.74967,-0.345889 -3.76721,-1.128613 -0.33073,-0.826823 -0.33073,-0.826823 -0.52917,-1.5875 z"
+       fill="#f2ad16"
+       id="path26"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 22.135275,16.949226 c 1.28807,0.119821 1.98056,0.418892 2.91042,1.322917 0.43983,0.639764 0.55815,0.884395 0.42994,1.653645 -0.0546,0.152797 -0.10914,0.305594 -0.16536,0.463021 -1.13068,-0.12563 -1.6148,-0.801892 -2.38125,-1.5875 -0.57314,-0.342688 -0.57314,-0.342688 -1.05833,-0.529166 0.0873,-0.436563 0.17462,-0.873125 0.26458,-1.322917 z"
+       fill="#f2ae16"
+       id="path42"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 31.924855,16.949226 c 0.0873,0.436562 0.17462,0.873125 0.26458,1.322917 -0.14358,0.08629 -0.28717,0.172578 -0.43511,0.261482 -0.18929,0.115621 -0.37858,0.231242 -0.57361,0.350367 -0.18724,0.113574 -0.37449,0.227149 -0.56741,0.344165 -0.54948,0.344518 -0.54948,0.344518 -0.95705,0.808219 -0.37723,0.352433 -0.37723,0.352433 -1.17098,0.352433 0.0182,-0.910531 0.0634,-1.602133 0.64802,-2.32854 0.89037,-0.809253 1.53221,-1.340016 2.79156,-1.111043 z"
+       fill="#f4b016"
+       id="path43"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 12.874855,8.7471433 c 0.17462,0.08731 0.34925,0.174625 0.52917,0.264583 -1.397,1.3969997 -2.794,2.7939997 -4.2333397,4.2333337 -0.17462,-0.08731 -0.34925,-0.174625 -0.52916,-0.264584 1.3317,-1.527984 2.6557197,-2.957823 4.2333297,-4.2333327 z"
+       fill="#d68a0f"
+       id="path51"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 25.574855,37.851309 c 0.87312,0 1.74625,0 2.64583,0 -0.59531,1.190625 -0.59531,1.190625 -1.5875,1.5875 -0.36397,-0.34122 -0.7164,-0.695032 -1.05833,-1.058333 0,-0.174625 0,-0.34925 0,-0.529167 z"
+       fill="#f3af16"
+       id="path52"
+       style="stroke-width:0.264583" />
+    <path
+       d="m 15.256105,14.03881 c 0.26194,0.08731 0.52387,0.174625 0.79375,0.264583 -0.3638,0.396875 -0.3638,0.396875 -0.79375,0.79375 -0.17462,0 -0.34925,0 -0.52917,0 -0.17462,0.34925 -0.34925,0.6985 -0.52916,1.058334 -0.17463,-0.174625 -0.34925,-0.34925 -0.52917,-0.529167 0.52388,-0.523875 1.04775,-1.04775 1.5875,-1.5875 z"
+       fill="#b46308"
+       id="path59"
+       style="stroke-width:0.264583" />
+  </g>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-white">Qahwahbee</h1>
+                        <p class="text-xs text-honey-orange">AI Research</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#about" class="nav-link text-cream hover:text-honey-orange">About</a>
+                    <a href="#services" class="nav-link text-cream hover:text-honey-orange">Services</a>
+                    <a href="#research" class="nav-link text-cream hover:text-honey-orange">Research</a>
+                    <a href="#contact" class="nav-link text-cream hover:text-honey-orange">Contact</a>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="flex flex-col space-y-4 py-4 px-2 bg-black">
+                    <a href="#about" class="text-cream hover:text-honey-orange">About</a>
+                    <a href="#services" class="text-cream hover:text-honey-orange">Services</a>
+                    <a href="#research" class="text-cream hover:text-honey-orange">Research</a>
+                    <a href="#contact" class="text-cream hover:text-honey-orange">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-animation py-20 md:py-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-dark-brown">
+                        <span class="animated-text">Advanced AI Infrastructure</span><br>
+                        <span class="animated-text" style="animation-delay: 0.5s;">& Research for Tomorrow's Solutions</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-coffee-brown">Brewing Innovation. Buzzing with Intelligence.</p>
+                    <p class="mb-8 text-dark-brown">We optimize the foundation of AI systems through innovative protocol design, efficient multi-agent frameworks, and specialized telecommunications solutions that transform how businesses implement artificial intelligence.</p>
+                    <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="custom-btn">Explore Our Research</button>
+                        <button class="custom-btn" style="background: var(--honey-orange);">Contact Us</button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="floating relative z-10">
+                        <svg width="400" height="400" viewBox="0 0 400 400" class="mx-auto">
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFBF00" stop-opacity="0.7" />
+                                    <stop offset="100%" stop-color="#9B4A0F" stop-opacity="0.7" />
+                                </linearGradient>
+                                <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#3A2A1D" flood-opacity="0.3" />
+                                </filter>
+                            </defs>
+                            
+                            <!-- Large Hexagon Background -->
+                            <path d="M200,40 L340,130 L340,270 L200,360 L60,270 L60,130 Z" fill="url(#grad1)" filter="url(#shadow)" />
+                            
+                            <!-- Circuit Lines -->
+                            <path d="M120,130 L200,130 M200,130 L280,130 M200,130 L200,200 M200,200 L120,270 M200,200 L280,270" stroke="#3A2A1D" stroke-width="3" stroke-opacity="0.3" fill="none" />
+                            
+                            <!-- Central Node -->
+                            <circle cx="200" cy="200" r="40" fill="#9B4A0F" />
+                            <circle cx="200" cy="200" r="35" fill="#FFBF00" />
+                            <path d="M200,180 C195,180 190,185 190,190 C185,190 180,195 180,200 C180,205 185,210 190,210 L210,210 C215,210 220,205 220,200 C220,195 215,190 210,190 C210,185 205,180 200,180 Z" fill="#3A2A1D" />
+                            
+                            <!-- Small Hexagons -->
+                            <path d="M120,130 L140,142 L140,166 L120,178 L100,166 L100,142 Z" fill="#9B4A0F" stroke="#3A2A1D" stroke-width="1" />
+                            <path d="M280,130 L300,142 L300,166 L280,178 L260,166 L260,142 Z" fill="#9B4A0F" stroke="#3A2A1D" stroke-width="1" />
+                            <path d="M120,270 L140,282 L140,306 L120,318 L100,306 L100,282 Z" fill="#9B4A0F" stroke="#3A2A1D" stroke-width="1" />
+                            <path d="M280,270 L300,282 L300,306 L280,318 L260,306 L260,282 Z" fill="#9B4A0F" stroke="#3A2A1D" stroke-width="1" />
+                            
+                            <!-- Animated Pulses -->
+                            <circle cx="200" cy="200" r="45" fill="none" stroke="#FFFDD0" stroke-width="2">
+                                <animate attributeName="r" values="45;60;45" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="stroke-opacity" values="1;0;1" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            
+                            <!-- Data Flow Animation -->
+                            <circle cx="160" cy="165" r="3" fill="#FFFDD0">
+                                <animate attributeName="cx" values="120;200" dur="2s" repeatCount="indefinite" />
+                                <animate attributeName="cy" values="130;200" dur="2s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="240" cy="165" r="3" fill="#FFFDD0">
+                                <animate attributeName="cx" values="280;200" dur="2.5s" repeatCount="indefinite" />
+                                <animate attributeName="cy" values="130;200" dur="2.5s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="160" cy="235" r="3" fill="#FFFDD0">
+                                <animate attributeName="cx" values="200;120" dur="3s" repeatCount="indefinite" />
+                                <animate attributeName="cy" values="200;270" dur="3s" repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="240" cy="235" r="3" fill="#FFFDD0">
+                                <animate attributeName="cx" values="200;280" dur="2.2s" repeatCount="indefinite" />
+                                <animate attributeName="cy" values="200;270" dur="2.2s" repeatCount="indefinite" />
+                            </circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bee Separator -->
+    <div class="bee-separator"></div>
+    
+    <!-- About Section -->
+    <section id="about" class="py-16 circuit-pattern">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center text-dark-brown">About Qahwahbee AI Research</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 md:pr-10 mb-10 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4 text-coffee-brown">Our Vision</h3>
+                    <p class="mb-6 text-dark-brown">Qahwahbee AI Research is a forward-thinking AI company focused on optimizing the foundational infrastructure of artificial intelligence. We are dedicated to developing more efficient protocols, lightweight frameworks, and resource-conscious implementations that make advanced AI accessible and practical for businesses of all sizes.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-coffee-brown">Our Approach</h3>
+                    <p class="mb-8 text-dark-brown">We believe AI should enhance human potential, not replace it. Our solutions are designed to augment teaching and learning experiences while maintaining the human connection at the heart of education.</p>
+                    <div class="flex space-x-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-coffee-brown flex items-center justify-center mr-3">
+                                <i class="fas fa-flask text-cream"></i>
+                            </div>
+                            <span class="text-dark-brown font-medium">Research-Driven</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-coffee-brown flex items-center justify-center mr-3">
+                                <i class="fas fa-users text-cream"></i>
+                            </div>
+                            <span class="text-dark-brown font-medium">Collaborative</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-coffee-brown flex items-center justify-center mr-3">
+                                <i class="fas fa-lightbulb text-cream"></i>
+                            </div>
+                            <span class="text-dark-brown font-medium">Innovative</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="bg-honey-lighter rounded-lg p-8 relative overflow-hidden shadow-lg transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold mb-4 text-dark-brown relative z-10">Our Research Focus</h3>
+                        <ul class="space-y-4 relative z-10">
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-coffee-brown flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                                    <i class="fas fa-network-wired text-xs text-cream"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark-brown">LLM Agent Infrastructure</h4>
+                                    <p class="text-coffee-brown">Developing efficient protocols and architectures for large language model agents.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-coffee-brown flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                                    <i class="fas fa-robot text-xs text-cream"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark-brown">Multi-Agent Frameworks</h4>
+                                    <p class="text-coffee-brown">Creating sophisticated multi-agent, multi-model systems for complex problem-solving.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="w-6 h-6 rounded-full bg-coffee-brown flex items-center justify-center mt-1 mr-3 flex-shrink-0">
+                                    <i class="fas fa-feather-alt text-xs text-cream"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark-brown">Low-Resource AI Applications</h4>
+                                    <p class="text-coffee-brown">Designing AI solutions that work effectively with limited computational resources.</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <!-- Honeycomb background pattern -->
+                        <div class="absolute top-0 left-0 w-full h-full z-0 opacity-5">
+                            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+                                <pattern id="hexagons" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(2)">
+                                    <polygon points="25,0 50,0 37.5,21.7 12.5,21.7" fill="#3A2A1D" />
+                                    <polygon points="0,0 12.5,21.7 0,43.4 -12.5,21.7" fill="#3A2A1D" />
+                                    <polygon points="25,43.4 12.5,21.7 37.5,21.7 50,43.4" fill="#3A2A1D" />
+                                    <polygon points="50,43.4 37.5,21.7 62.5,21.7 75,43.4" fill="#3A2A1D" />
+                                    <polygon points="50,0 62.5,21.7 37.5,21.7" fill="#3A2A1D" />
+                                </pattern>
+                                <rect width="100%" height="100%" fill="url(#hexagons)" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-coffee-lightest rounded-full opacity-50 z-0"></div>
+                    <div class="absolute -top-10 -right-10 w-60 h-60 bg-honey-lightest rounded-full opacity-50 z-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bee Separator -->
+    <div class="bee-separator"></div>
+    
+    <!-- Services Section -->
+    <section id="services" class="py-16" style="background-color: var(--honey-lighter);">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-dark-brown">Our Services</h2>
+            <p class="text-center text-coffee-brown max-w-2xl mx-auto mb-16">We offer innovative AI infrastructure solutions designed for businesses seeking practical, efficient, and reliable artificial intelligence implementation with a focus on telecommunications and technical optimization.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card p-6">
+                    <div class="service-icon mb-6 text-center">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-brown text-center">Protocol Innovation</h3>
+                    <p class="text-coffee-brown text-center">Qahwahbee is pioneering alternative protocols to QUIC for LLM agent infrastructure, reducing latency and resource consumption while improving reliability in real-world applications.</p>
+                    <div class="mt-6 text-center">
+                        <a href="#" class="text-coffee-brown font-medium hover:text-dark-brown transition-colors duration-300">Learn more →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card p-6">
+                    <div class="service-icon mb-6 text-center">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-brown text-center">Multi-Agent Architecture</h3>
+                    <p class="text-coffee-brown text-center">Our research creates lightweight, efficient multi-agent microservice frameworks that enable more complex, collaborative AI systems while requiring fewer computational resources.</p>
+                    <div class="mt-6 text-center">
+                        <a href="#" class="text-coffee-brown font-medium hover:text-dark-brown transition-colors duration-300">Learn more →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card p-6">
+                    <div class="service-icon mb-6 text-center">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-brown text-center">Telecommunications Expertise</h3>
+                    <p class="text-coffee-brown text-center">With deep industry experience in network performance intelligence, we develop AI solutions optimized for telecommunications infrastructure and specialized business applications.</p>
+                    <div class="mt-6 text-center">
+                        <a href="#" class="text-coffee-brown font-medium hover:text-dark-brown transition-colors duration-300">Learn more →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card p-6">
+                    <div class="service-icon mb-6 text-center">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-brown text-center">Low-Resource Implementation</h3>
+                    <p class="text-coffee-brown text-center">We design AI applications that deliver advanced capabilities with minimal computational requirements, making powerful AI accessible to businesses of all sizes.</p>
+                    <div class="mt-6 text-center">
+                        <a href="#" class="text-coffee-brown font-medium hover:text-dark-brown transition-colors duration-300">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bee Separator -->
+    <div class="bee-separator"></div>
+    
+    <!-- Research Areas Section -->
+    <section id="research" class="py-16" style="background-color: var(--coffee-lightest);">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-dark-brown">Research Areas</h2>
+            <p class="text-center text-coffee-brown max-w-2xl mx-auto mb-16">Our innovative research focuses on three key areas that are transforming the AI landscape.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Research Area 1 -->
+                <div class="research-area p-8 text-center">
+                    <div class="research-icon flex justify-center mb-6">
+                        <svg width="80" height="80" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="90" fill="none" stroke="#9B4A0F" stroke-width="4" />
+                            <circle cx="100" cy="100" r="70" fill="none" stroke="#9B4A0F" stroke-width="2" />
+                            <path d="M40,70 L70,70 M70,70 L100,40 M100,40 L130,70 M130,70 L160,70 M70,130 L100,160 M100,160 L130,130" stroke="#3A2A1D" stroke-width="2" fill="none" />
+                            <rect x="30" y="70" width="20" height="20" rx="5" fill="#3A2A1D" />
+                            <rect x="150" y="70" width="20" height="20" rx="5" fill="#3A2A1D" />
+                            <rect x="90" y="30" width="20" height="20" rx="5" fill="#3A2A1D" />
+                            <rect x="90" y="150" width="20" height="20" rx="5" fill="#3A2A1D" />
+                            <rect x="60" y="110" width="20" height="20" rx="5" fill="#FFBF00" />
+                            <rect x="120" y="110" width="20" height="20" rx="5" fill="#FFBF00" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-brown">LLM Agent Infrastructure</h3>
+                    <p class="text-coffee-brown">Creating alternative protocols to QUIC for more efficient LLM agent communication and operation, reducing latency and resource usage.</p>
+                    <div class="mt-6">
+                        <a href="#" class="text-dark-brown font-medium hover:text-coffee-brown transition-colors duration-300">Explore Research →</a>
+                    </div>
+                </div>
+                
+                <!-- Research Area 2 -->
+                <div class="research-area p-8 text-center">
+                    <div class="research-icon flex justify-center mb-6">
+                        <svg width="80" height="80" viewBox="0 0 200 200">
+                            <polygon points="100,20 180,60 180,140 100,180 20,140 20,60" fill="none" stroke="#9B4A0F" stroke-width="4" />
+                            <circle cx="100" cy="60" r="20" fill="#FFBF00" />
+                            <circle cx="150" cy="100" r="20" fill="#FFBF00" />
+                            <circle cx="100" cy="140" r="20" fill="#FFBF00" />
+                            <circle cx="50" cy="100" r="20" fill="#FFBF00" />
+                            <path d="M100,60 L150,100 M150,100 L100,140 M100,140 L50,100 M50,100 L100,60" stroke="#3A2A1D" stroke-width="2" />
+                            <circle cx="100" cy="100" r="25" fill="#9B4A0F" />
+                            <circle cx="100" cy="100" r="15" fill="#FFFDD0" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-brown">Multi-Agent Frameworks</h3>
+                    <p class="text-coffee-brown">Developing multi-agent, multi-model microservice-based LLM frameworks that enable more complex, collaborative AI systems.</p>
+                    <div class="mt-6">
+                        <a href="#" class="text-dark-brown font-medium hover:text-coffee-brown transition-colors duration-300">Explore Research →</a>
+                    </div>
+                </div>
+                
+                <!-- Research Area 3 -->
+                <div class="research-area p-8 text-center">
+                    <div class="research-icon flex justify-center mb-6">
+                        <svg width="80" height="80" viewBox="0 0 200 200">
+                            <rect x="40" y="40" width="120" height="120" rx="10" fill="none" stroke="#9B4A0F" stroke-width="4" />
+                            <circle cx="100" cy="100" r="40" fill="#FFBF00" />
+                            <path d="M70,60 L60,60 L60,70 M70,140 L60,140 L60,130 M130,60 L140,60 L140,70 M130,140 L140,140 L140,130" stroke="#3A2A1D" stroke-width="2" />
+                            <path d="M80,80 C80,75 95,75 95,80 L95,120 C95,125 80,125 80,120 Z" fill="#3A2A1D" />
+                            <path d="M105,80 C105,75 120,75 120,80 L120,120 C120,125 105,125 105,120 Z" fill="#3A2A1D" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-dark-brown">Low-Resource AI Applications</h3>
+                    <p class="text-coffee-brown">Researching and implementing AI solutions that work effectively with limited computational resources, making advanced AI accessible to all.</p>
+                    <div class="mt-6">
+                        <a href="#" class="text-dark-brown font-medium hover:text-coffee-brown transition-colors duration-300">Explore Research →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bee Separator -->
+    <div class="bee-separator"></div>
+    
+    <!-- Differentiators Section -->
+    <section class="py-16" style="background-color: var(--honey-lighter);">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-dark-brown">Why Choose Qahwahbee</h2>
+            <p class="text-center text-coffee-brown max-w-2xl mx-auto mb-16">What sets our approach apart from other AI solutions providers</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Differentiator 1 -->
+                <div class="bg-honey-lightest p-6 rounded-lg shadow-md flex items-start">
+                    <div class="w-12 h-12 rounded-full bg-coffee-brown flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fas fa-user-tie text-cream text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-dark-brown">Technical Depth</h3>
+                        <p class="text-coffee-brown">Founded by a telecommunications and data science expert with 18+ years of technical experience</p>
+                    </div>
+                </div>
+                
+                <!-- Differentiator 2 -->
+                <div class="bg-honey-lightest p-6 rounded-lg shadow-md flex items-start">
+                    <div class="w-12 h-12 rounded-full bg-coffee-brown flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fas fa-flask text-cream text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-dark-brown">Research-Driven</h3>
+                        <p class="text-coffee-brown">Our solutions are built on rigorous research and benchmarking, not trend-following</p>
+                    </div>
+                </div>
+                
+                <!-- Differentiator 3 -->
+                <div class="bg-honey-lightest p-6 rounded-lg shadow-md flex items-start">
+                    <div class="w-12 h-12 rounded-full bg-coffee-brown flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fas fa-server text-cream text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-dark-brown">Infrastructure Focus</h3>
+                        <p class="text-coffee-brown">We optimize the foundation of AI systems, not just the applications built on top</p>
+                    </div>
+                </div>
+                
+                <!-- Differentiator 4 -->
+                <div class="bg-honey-lightest p-6 rounded-lg shadow-md flex items-start">
+                    <div class="w-12 h-12 rounded-full bg-coffee-brown flex items-center justify-center mr-4 flex-shrink-0">
+                        <i class="fas fa-chart-line text-cream text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2 text-dark-brown">Practical Implementation</h3>
+                        <p class="text-coffee-brown">Real-world solutions that address genuine business challenges with measurable results</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bee Separator -->
+    <div class="bee-separator"></div>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 contact-bg">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center text-dark-brown">Get In Touch</h2>
+                <p class="text-center text-coffee-brown max-w-2xl mx-auto mb-16">Interested in our research or services? Contact us to explore how Qahwahbee can help you harness the power of AI.</p>
+                
+                <div class="flex flex-col md:flex-row bg-honey-lightest rounded-lg overflow-hidden shadow-xl">
+                    <div class="md:w-1/2 p-8 md:p-12" style="background-color: var(--coffee-lightest);">
+                        <h3 class="text-2xl font-bold mb-6 text-dark-brown">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-coffee-brown flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-map-marker-alt text-cream"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark-brown">Location</h4>
+                                    <p class="text-coffee-brown">Swindon, United Kingdom</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-coffee-brown flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-envelope text-cream"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark-brown">Email</h4>
+                                    <p class="text-coffee-brown"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="a9c0c7cfc6e9d8c8c1dec8c1cbcccc87cac6">[email&#160;protected]</a></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-coffee-brown flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-phone text-cream"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-dark-brown">Phone</h4>
+                                    <p class="text-coffee-brown">+44 (0) 123 456 7890</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-12">
+                            <h4 class="font-bold text-dark-brown mb-4">Connect With Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-coffee-brown flex items-center justify-center text-cream hover:bg-dark-brown transition-colors duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-coffee-brown flex items-center justify-center text-cream hover:bg-dark-brown transition-colors duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-coffee-brown flex items-center justify-center text-cream hover:bg-dark-brown transition-colors duration-300">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <form>
+                            <div class="mb-6">
+                                <label for="name" class="block text-dark-brown font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="form-input w-full" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-dark-brown font-medium mb-2">Your Email</label>
+                                <input type="email" id="email" class="form-input w-full" required>
+                            </div>
+                            <div class="mb-6">
+                                <label for="subject" class="block text-dark-brown font-medium mb-2">Subject</label>
+                                <input type="text" id="subject" class="form-input w-full">
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-dark-brown font-medium mb-2">Your Message</label>
+                                <textarea id="message" rows="5" class="form-input w-full" required></textarea>
+                            </div>
+                            <button type="submit" class="custom-btn w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bee Separator -->
+    <div class="bee-separator"></div>
+    
+    <!-- Footer -->
+    <footer class="bg-black text-cream py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <svg width="40" height="40" viewBox="0 0 200 200">
+                            <circle cx="100" cy="100" r="90" fill="#FFBF00" />
+                            <path d="M100,0 C44.8,0 0,44.8 0,100 C0,155.2 44.8,200 100,200 C155.2,200 200,155.2 200,100 C200,44.8 155.2,0 100,0 Z M100,180 C55.8,180 20,144.2 20,100 C20,55.8 55.8,20 100,20 C144.2,20 180,55.8 180,100 C180,144.2 144.2,180 100,180 Z" fill="#3A2A1D" />
+                            <circle cx="100" cy="100" r="65" fill="#9B4A0F" />
+                            <circle cx="100" cy="100" r="60" fill="#9B4A0F" />
+                            <path d="M100,60 C95,60 90,65 90,70 C85,70 80,75 80,80 C80,85 85,90 90,90 L110,90 C115,90 120,85 120,80 C120,75 115,70 110,70 C110,65 105,60 100,60 Z" fill="#FFFDD0" />
+                            <rect x="90" y="100" width="20" height="5" rx="2.5" fill="#FFFDD0" />
+                            <rect x="90" y="110" width="20" height="5" rx="2.5" fill="#FFFDD0" />
+                            <path d="M90,130 L100,140 L110,130 Z" fill="#FFFDD0" />
+                            <path d="M85,48 C85,48 90,53 95,48" stroke="#FFFDD0" stroke-width="3" fill="none" />
+                            <path d="M105,48 C105,48 110,53 115,48" stroke="#FFFDD0" stroke-width="3" fill="none" />
+                        </svg>
+                        <div class="ml-3">
+                            <h3 class="text-xl font-bold text-white">Qahwahbee</h3>
+                            <p class="text-xs text-honey-orange">AI Research</p>
+                        </div>
+                    </div>
+                    <p class="text-cream opacity-80 max-w-xs">Brewing Innovation. Buzzing with Intelligence. We're dedicated to advancing AI technology for educational excellence.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-honey-orange font-bold mb-4">Quick Links</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-cream hover:text-honey-orange transition-colors duration-300">About</a></li>
+                            <li><a href="#services" class="text-cream hover:text-honey-orange transition-colors duration-300">Services</a></li>
+                            <li><a href="#research" class="text-cream hover:text-honey-orange transition-colors duration-300">Research</a></li>
+                            <li><a href="#contact" class="text-cream hover:text-honey-orange transition-colors duration-300">Contact</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-honey-orange font-bold mb-4">Services</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">Protocol Innovation</a></li>
+                            <li><a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">Multi-Agent Architecture</a></li>
+                            <li><a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">Telecommunications Expertise</a></li>
+                            <li><a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">Low-Resource Implementation</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-honey-orange font-bold mb-4">Research</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">LLM Infrastructure</a></li>
+                            <li><a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">Multi-Agent Systems</a></li>
+                            <li><a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">Low-Resource AI</a></li>
+                            <li><a href="#" class="text-cream hover:text-honey-orange transition-colors duration-300">Publications</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pt-8 mt-8 border-t border-gray-800">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-cream opacity-70 text-sm mb-4 md:mb-0">&copy; 2025 Qahwahbee AI Research. All rights reserved.</p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-cream opacity-70 hover:opacity-100 text-sm">Privacy Policy</a>
+                        <a href="#" class="text-cream opacity-70 hover:opacity-100 text-sm">Terms of Service</a>
+                        <a href="#" class="text-cream opacity-70 hover:opacity-100 text-sm">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('active')) {
+                    mobileMenu.classList.remove('active');
+                }
+                
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Add animation classes and observe elements
+        document.querySelectorAll('.service-card, .research-area').forEach(el => {
+            el.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(el);
+        });
+        
+        // Add animation class when element is in viewport
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.animate-in').forEach(el => {
+                el.classList.remove('opacity-0', 'translate-y-10');
+            });
+        });
+    </script>
+</body>
+</html>
